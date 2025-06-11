@@ -15,7 +15,7 @@
 
 ## 📜 Visão Geral do Projeto
 
-Este projeto implementa um sistema para gerenciar um Hackathon Universitário [cite: 2][cite_start], com foco na administração de **Projetos** e **Equipes** participantes. [cite_start]Toda a aplicação é, a princípio, gerenciada em memória principal.
+Este projeto implementa um sistema para gerenciar um Hackathon Universitário [cite: 2][cite_start], com foco na administração de **Projetos** e **Equipes** participantes. Toda a aplicação é, a princípio, gerenciada em memória principal.
 
 ---
 
