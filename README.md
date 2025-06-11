@@ -31,7 +31,7 @@ A solução foi implementada em Java, partindo de um diagrama de classes UML ini
 
 ### Padrão de Projeto Singleton
 
-Para centralizar o controle de dados, foram criadas classes de coleção como `Equipes` e `Apresentacoes`. [cite_start]Essas classes seguem o padrão de projeto **Singleton**, garantindo uma única instância de cada coleção em todo o sistema.
+Para centralizar o controle de dados, foram criadas classes de coleção como `Equipes` e `Apresentacoes`. Essas classes seguem o padrão de projeto **Singleton**, garantindo uma única instância de cada coleção em todo o sistema.
 
 ---
 
