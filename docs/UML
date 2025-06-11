@@ -1,1 +1,10 @@
-![Texto Alternativo](docs/assets/imagens/https://github.com/CiscoRafael/Hackaton-Univesity/blob/main/docs/assets/imagens/diagrama-uml.jpg.png)
+---
+
+## 🛠️ Arquitetura e Design
+
+A arquitetura do sistema foi desenvolvida em Java, com base no diagrama de classes UML abaixo para garantir uma estrutura coesa e extensível.
+
+![Diagrama UML do Sistema](assets/diagrama-uml.jpg)
+
+### Padrão de Projeto Singleton
+...
