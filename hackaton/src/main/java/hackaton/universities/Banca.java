@@ -1,22 +1,39 @@
 package hackaton.universities;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Banca {
-    private ArrayList<Jurado> jurados;
-    private ArrayList<Double> notas;
+public class Banca implements Avaliavel{
+    private Map<Jurado, Double> jurados;
+    private Projeto projeto;
+
 
     public Banca() {
-        jurados = new ArrayList<>();
-        notas = new ArrayList<>();
+        jurados = new HashMap<>();
     }
 
-    public void adicionarJurado(Jurado jurado, double nota) {
-        jurados.add(jurado);
-        notas.add(nota);
+    public void adicionarJurado(Jurado jurado, Double nota) {
+        if(jurados.size() < 4){
+            jurados.put(jurado, nota);
+        } else{
+            System.out.println("Essa banca já está cheia");
+        }
     }
 
-    public double mediaNotas() {
-        return notas.stream().mapToDouble(n -> n).average().orElse(0);
+    public void adicionarProjetoABanca(Projeto projeto){
+        this.projeto = projeto;
+    }
+
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    @Override
+    public double calcularNotaFinal() {
+        double notaFinal = 0;
+        for(double nota: jurados.values()){
+            notaFinal += nota;
+        }
+        return notaFinal;
     }
 }

@@ -3,6 +3,11 @@ package hackaton.universities;
 public class Estudante {
     private String nome, matricula;
 
+    Estudante(String nome, String matricula){
+        this.nome = nome;
+        this.matricula = matricula;
+    }
+
     public String getNome() {
         return nome;
     }

@@ -5,29 +5,29 @@ import java.util.ArrayList;
 public class Equipe {
     private String nome;
     private ArrayList<Estudante> estudantes = new ArrayList<>();
-    private Projeto projeto;
 
     public Equipe(String nome) {
         this.nome = nome;
     }
 
     public void adicionarEstudante(Estudante estudante) {
-        estudantes.add(estudante);
+        if(estudantes.size() < 5){
+            estudantes.add(estudante);
+        } else{
+            System.out.println("A equipe já está cheia");
+        }
+        
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
     public ArrayList<Estudante> getEstudantes() {
         return estudantes;
-    }
-
-    public void setProjeto(Projeto projeto) {
-        this.projeto = projeto;
-    }
-
-    public Projeto getProjeto() {
-        return projeto;
     }
 }
