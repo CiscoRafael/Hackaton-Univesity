@@ -15,8 +15,10 @@
 
 ## 👥 Participantes e Professor
 
-* **Professor:** Daniel Kansaon 
-* **Alunos:** Francisco Rafael P. Rodrigues, João R. Fiuza
+* **Professor:** Daniel Kansaon
+* **Alunos:**
+    * Francisco Rafael P. Rodrigues
+    * João R. Fiuza
 
 ### 📖 Índice
 
