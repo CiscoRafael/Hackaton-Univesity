@@ -9,7 +9,7 @@
 
 O diagrama de classes abaixo representa a arquitetura do Sistema de Gerenciamento de Hackathons. Ele foi modelado para refletir as entidades, seus relacionamentos e as principais funcionalidades do projeto, servindo como a base para toda a implementação em Java.
 
-![**DIAGRAMA UML**](docs/assets/imagens/diagrama-uml.jpg.png)
+![**DIAGRAMA UML**](/assets/imagens/diagrama-uml.jpg.png)
 
 ### Detalhamento da Estrutura
 
