@@ -86,5 +86,3 @@ Siga os passos abaixo para compilar e rodar o projeto localmente.
     ```bash
     java -cp bin Main
     ```
-
----
