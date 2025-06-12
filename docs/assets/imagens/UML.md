@@ -2,14 +2,14 @@
 
 ## 📋 Diagrama UML 1.0
 
-![**DIAGRAMA UML**](diagrama-uml.jpg.png)
+---
+
 
 ## 🏗️ Arquitetura e Diagrama de Classes
 
 O diagrama de classes abaixo representa a arquitetura do Sistema de Gerenciamento de Hackathons. Ele foi modelado para refletir as entidades, seus relacionamentos e as principais funcionalidades do projeto, servindo como a base para toda a implementação em Java.
 
-*Insira a imagem do seu diagrama aqui, se desejar:*
-`![Diagrama UML do Sistema](assets/diagrama-uml.jpg)`
+![**DIAGRAMA UML**](diagrama-uml.jpg.png)
 
 ### Detalhamento da Estrutura
 
