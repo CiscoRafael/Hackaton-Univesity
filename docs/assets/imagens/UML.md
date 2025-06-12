@@ -1,6 +1,7 @@
 
 
-## 📋 Diagrama de entidade e relacionamento 
+## 📋 Diagrama UML 1.0
+
 ![**DIAGRAMA UML**](diagrama-uml.jpg.png)
 
 ## 🏗️ Arquitetura e Diagrama de Classes
