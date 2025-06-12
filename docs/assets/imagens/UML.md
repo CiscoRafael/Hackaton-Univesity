@@ -1,7 +1,7 @@
 
 
 ## 📋 Diagrama de entidade e relacionamento 
-![**DIAGRAMA UML**](docs/assets/imagens/diagrama-uml.jpg.png)
+![**DIAGRAMA UML**](diagrama-uml.jpg.png)
 
 ## 🏗️ Arquitetura e Diagrama de Classes
 
