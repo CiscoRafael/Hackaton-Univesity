@@ -2,87 +2,89 @@
 
 # 💻 Sistema de Gerenciamento de Hackathons Universitários
 
-<p>
-  Um projeto em Java para simular a gestão de equipes, projetos e avaliações em um hackathon, desenvolvido para a disciplina de Programação Modular.
-</p>
+**Simulação completa da gestão de equipes, projetos e avaliações em um hackathon universitário.**  
+Desenvolvido em Java, com foco em boas práticas de **Programação Modular** e **Orientação a Objetos**.
 
-![Badge](https://img.shields.io/badge/language-Java-blue)
-![Badge](https://img.shields.io/badge/license-MIT-green)
+</div>
+
+<div align="center">
+
+![Java](https://img.shields.io/badge/Java-11%2B-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Coverage](https://img.shields.io/codecov/c/github/[usuario]/[repositorio]?color=brightgreen)
+![Repo Size](https://img.shields.io/github/repo-size/[usuario]/[repositorio])
+![Last Commit](https://img.shields.io/github/last-commit/[usuario]/[repositorio])
+![Open Issues](https://img.shields.io/github/issues/[usuario]/[repositorio])
 
 </div>
 
 ---
 
-## 👥 Participantes e Professor
+## 📘 1. Visão Geral
 
-* **Professor:** Daniel Kansaon
-* **Alunos:**
-    * Francisco Rafael P. Rodrigues
-    * João R. Fiuza
-
-### 📖 Índice
-
-* [Objetivo do Projeto](#-objetivo-do-projeto)
-* [Arquitetura e Design](#️-arquitetura-e-design)
-* [Funcionalidades e Cenário de Teste](#️-funcionalidades-e-cenário-de-teste)
-* [Guia de Execução](#-guia-de-execução)
-* [Participantes e Professor](#-participantes-e-professor)
+Este projeto simula a gestão de um **Hackathon Universitário**, desde a formação de equipes até a avaliação final dos projetos. O sistema é inteiramente executado em memória e foi desenvolvido como parte da disciplina de **Programação Modular**.
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 🎯 2. Objetivos
 
-O objetivo deste projeto é aplicar os conceitos de **Programação Modular e Orientação a Objetos** para construir um sistema de gerenciamento de um Hackathon Universitário. A aplicação se concentra na administração das **equipes** e seus respectivos **projetos**, gerenciando todo o ciclo de vida desde a formação dos grupos até a avaliação final. O sistema foi projetado para operar inteiramente em memória principal.
-
----
-
-## 🛠️ Arquitetura e Design
-
-A arquitetura foi concebida utilizando **Java**, com base em um diagrama de classes UML pré-definido, para garantir uma estrutura coesa e extensível.
-
-* **Estrutura de Classes:** O código foi organizado em pacotes que separam as entidades do domínio (`Pessoa`, `Equipe`, `Projeto`), a lógica de controle e a simulação principal. A hierarquia de classes, como `Pessoa` sendo a base para `Estudante` e `Profissional`, permite o reaproveitamento de código e a representação fiel das relações do mundo real.
-
-* **Padrão de Projeto Singleton:** Para garantir um ponto de acesso único e controlado às coleções de dados, as classes `Equipes` e `Apresentacoes` foram implementadas seguindo o padrão **Singleton**. Essa abordagem previne a duplicação de estado e assegura a consistência dos dados em toda a aplicação.
-
-* **Interface `Avaliavel`:** A criação da interface `Avaliavel` desacopla a lógica de apresentação da lógica de avaliação. Isso significa que a classe `Apresentacao` não precisa conhecer a implementação específica da `Banca`, tornando o sistema mais flexível e fácil de manter.
+- Aplicar conceitos de **modularização**, **encapsulamento** e **reutilização de código**;
+- Utilizar **herança**, **interfaces** e **design patterns** para uma arquitetura coesa;
+- Praticar a **estruturação em pacotes** e a organização de responsabilidades;
+- Demonstrar o uso de **streams** e **coleções genéricas** do Java.
 
 ---
 
-## ⚙️ Funcionalidades e Cenário de Teste
+## 🧱 3. Arquitetura e Design
 
-A classe `Main` executa uma simulação completa para demonstrar as funcionalidades do sistema, seguindo os critérios da atividade:
+A aplicação segue uma arquitetura orientada a objetos, estruturada em pacotes e baseada em um diagrama de classes UML.
 
-* **Criação de Equipes:** São criadas 2 equipes, cada uma com 5 alunos.
-* **Submissão de Projetos:** Um projeto diferente é associado a cada equipe.
-* **Formação de Banca:** É montada uma banca avaliadora com 4 jurados para cada projeto.
-* **Cálculo da Média:** A nota final de cada projeto é calculada com base na média das notas atribuídas pelos jurados.
-* **Listagem de Aprovados:** Ao final, o sistema utiliza `stream` para filtrar e exibir apenas os projetos com nota final $\ge7$.
+### ⚙️ 3.1 Estrutura de Pacotes
+
+| Pacote           | Conteúdo                                                             |
+|------------------|----------------------------------------------------------------------|
+| `entidades`      | Classes de domínio: `Pessoa`, `Estudante`, `Profissional`, `Projeto`, `Equipe` |
+| `controle`       | Lógica de controle: simulação principal (`Main`)                     |
+| `avaliacao`      | Interface `Avaliavel` e classe `Banca`                               |
+| `gerenciadores`  | Singletons: `Equipes`, `Apresentacoes`                               |
+
+### 🧩 3.2 Padrões e Princípios Aplicados
+
+- **Herança:** `Estudante` e `Profissional` herdam de `Pessoa`, promovendo reutilização;
+- **Interface `Avaliavel`:** Abstrai a lógica de avaliação, promovendo flexibilidade;
+- **Singleton:** `Equipes` e `Apresentacoes` garantem acesso global e seguro às coleções.
 
 ---
 
-## 🚀 Guia de Execução
+## 🚀 4. Funcionalidades Implementadas
 
-Siga os passos abaixo para compilar e rodar o projeto localmente.
+A simulação principal (`Main.java`) cobre todo o fluxo esperado para o gerenciamento de um hackathon:
 
-### Pré-requisitos
+- 👥 **Criação de Equipes:** 2 equipes, cada uma com 5 estudantes;
+- 📁 **Submissão de Projetos:** Um projeto atribuído por equipe;
+- 🧑‍⚖️ **Formação da Banca:** Cada projeto é avaliado por 4 jurados;
+- 📊 **Avaliação e Média:** Média final calculada com base nas notas;
+- ✅ **Filtragem de Aprovados:** Uso de `Stream API` para exibir somente projetos com nota ≥ 7.0.
 
-* **Java Development Kit (JDK)** 11 ou superior instalado e configurado.
+---
 
-### Passos para Execução
+## 🧪 5. Pré-requisitos
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone [URL-do-seu-repositorio]
-    ```
-2.  **Navegue até o diretório raiz:**
-    ```bash
-    cd [nome-do-diretorio-do-projeto]
-    ```
-3.  **Compile o código-fonte:**
-    ```bash
-    javac -d bin src/*.java
-    ```
-4.  **Execute a simulação:**
-    ```bash
-    java -cp bin Main
-    ```
+- Java Development Kit (JDK) **11** ou superior instalado e configurado no `PATH`.
+
+---
+
+## 🛠️ 6. Instruções de Execução
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/[usuario]/[repositorio].git
+
+# 2. Acesse o diretório do projeto
+cd [repositorio]
+
+# 3. Compile os arquivos-fonte
+javac -d bin src/*.java
+
+# 4. Execute a simulação
+java -cp bin Main
