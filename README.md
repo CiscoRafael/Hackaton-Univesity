@@ -20,18 +20,18 @@ Desenvolvido em Java, com foco em boas práticas de **Programação Modular** e 
 
 ---
 
-## 📘 1. Visão Geral
-
-Este projeto simula a gestão de um **Hackathon Universitário**, desde a formação de equipes até a avaliação final dos projetos. O sistema é inteiramente executado em memória e foi desenvolvido como parte da disciplina de **Programação Modular**.
-
----
-
 ## 👥 Equipe
 
 - **Professor:** Daniel Kansaon  
 - **Alunos:**
   - Francisco Rafael P. Rodrigues  
   - João R. Fiuza
+
+---
+
+## 📘 1. Visão Geral
+
+Este projeto simula a gestão de um **Hackathon Universitário**, desde a formação de equipes até a avaliação final dos projetos. O sistema é inteiramente executado em memória e foi desenvolvido como parte da disciplina de **Programação Modular**.
 
 ---
 
