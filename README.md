@@ -32,7 +32,7 @@
 
 ## 🎯 Objetivo do Projeto
 
-O objetivo deste projeto é aplicar os conceitos de **Programação Modular e Orientação a Objetos** para construir um sistema de gerenciamento de um Hackathon Universitário. [cite_start]A aplicação se concentra na administração das **equipes** e seus respectivos **projetos**, gerenciando todo o ciclo de vida desde a formação dos grupos até a avaliação final. [cite_start]O sistema foi projetado para operar inteiramente em memória principal.
+O objetivo deste projeto é aplicar os conceitos de **Programação Modular e Orientação a Objetos** para construir um sistema de gerenciamento de um Hackathon Universitário. A aplicação se concentra na administração das **equipes** e seus respectivos **projetos**, gerenciando todo o ciclo de vida desde a formação dos grupos até a avaliação final. O sistema foi projetado para operar inteiramente em memória principal.
 
 ---
 
@@ -40,7 +40,7 @@ O objetivo deste projeto é aplicar os conceitos de **Programação Modular e Or
 
 A arquitetura foi concebida utilizando **Java**, com base em um diagrama de classes UML pré-definido, para garantir uma estrutura coesa e extensível.
 
-* **Estrutura de Classes:** O código foi organizado em pacotes que separam as entidades do domínio (`Pessoa`, `Equipe`, `Projeto`), a lógica de controle e a simulação principal. [cite_start]A hierarquia de classes, como `Pessoa` sendo a base para `Estudante` e `Profissional`, permite o reaproveitamento de código e a representação fiel das relações do mundo real.
+* **Estrutura de Classes:** O código foi organizado em pacotes que separam as entidades do domínio (`Pessoa`, `Equipe`, `Projeto`), a lógica de controle e a simulação principal. A hierarquia de classes, como `Pessoa` sendo a base para `Estudante` e `Profissional`, permite o reaproveitamento de código e a representação fiel das relações do mundo real.
 
 * **Padrão de Projeto Singleton:** Para garantir um ponto de acesso único e controlado às coleções de dados, as classes `Equipes` e `Apresentacoes` foram implementadas seguindo o padrão **Singleton**. Essa abordagem previne a duplicação de estado e assegura a consistência dos dados em toda a aplicação.
 
