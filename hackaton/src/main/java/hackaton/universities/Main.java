@@ -42,7 +42,7 @@ public class Main {
 
         // Criar jurados
         Jurado j1 = new Jurado("Laerte", "lar@gmail.com", uni, "Coordenador Engenharia", true, "IA");
-        Jurado j2 = new Jurado("Marina", "marina@gmail.com", uni, "Professora", true, "Banco de Dados");
+        Jurado j2 = new Jurado("Marcela", "mercela@gmail.com", uni, "Professora", true, "Banco de Dados");
         Jurado j3 = new Jurado("Carlos", "carlos@gmail.com", uni, "Professor", true, "Redes");
         Jurado j4 = new Jurado("Fernanda", "fernanda@gmail.com", uni, "Professora", true, "Engenharia de Software");
         Jurado j5 = new Jurado("João", "joao@gmail.com", uni, "Professor", true, "Algoritmos");
