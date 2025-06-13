@@ -1,6 +1,12 @@
 package hackaton.universities;
 
 abstract class  Pessoa {
+    public Pessoa(String nome, String email, Instituicao instituicao) {
+        this.nome = nome;
+        this.email = email;
+        Instituicao = instituicao;
+    }
+
     private String nome, email;
     private Instituicao Instituicao;
 

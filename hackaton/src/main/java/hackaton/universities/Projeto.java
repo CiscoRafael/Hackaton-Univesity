@@ -2,12 +2,14 @@ package hackaton.universities;
 
 public class Projeto {
     private String titulo;
+    private String descricao;
     private Profissional orientador;
     private double notaFinal;
     private Equipe equipe;
 
-    public Projeto(String titulo) {
+    public Projeto(String titulo, String descricao) {
         this.titulo = titulo;
+        this.descricao = descricao;
     }
     
     public String getTitulo() {
@@ -26,7 +28,7 @@ public class Projeto {
         return orientador;
     }
 
-    public void setOrientador(Profissional orientador) {
+    public void adicionarOrientador(Profissional orientador) {
         if(orientador.isDisponivel() == true){
             this.orientador = orientador;
         } else{
@@ -41,6 +43,9 @@ public class Projeto {
 
     public Equipe getEquipe() {
         return equipe;
-    }    
-    
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
 }

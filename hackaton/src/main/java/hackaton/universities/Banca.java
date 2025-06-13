@@ -23,7 +23,12 @@ public class Banca implements Avaliavel {
     }
 
     public void adicionarJurado(Jurado jurado) {
-        jurados.put(jurado, null);
+        if(jurados.size()<4){
+            jurados.put(jurado, null);
+        } else{
+            System.out.println("Essa bancada já está lotada");
+        }
+        
     }
 
     public void lancarNota(Jurado jurado, int nota) {
