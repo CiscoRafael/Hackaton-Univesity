@@ -26,6 +26,15 @@ Este projeto simula a gestão de um **Hackathon Universitário**, desde a forma�
 
 ---
 
+## 👥 Equipe
+
+- **Professor:** Daniel Kansaon  
+- **Alunos:**
+  - Francisco Rafael P. Rodrigues  
+  - João R. Fiuza
+
+---
+
 ## 🎯 2. Objetivos
 
 - Aplicar conceitos de **modularização**, **encapsulamento** e **reutilização de código**;
