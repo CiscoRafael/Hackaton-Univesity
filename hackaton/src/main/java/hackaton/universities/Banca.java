@@ -3,37 +3,48 @@ package hackaton.universities;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Banca implements Avaliavel{
-    private Map<Jurado, Double> jurados;
-    private Projeto projeto;
+public class Banca implements Avaliavel {
+    private Projeto projetoAvaliado;
+    private Map<Jurado, Integer> jurados = new HashMap<>();
 
-
-    public Banca() {
-        jurados = new HashMap<>();
+    public Banca(Projeto projetoAvaliado) {
+        adicionarProjeto(projetoAvaliado);
     }
 
-    public void adicionarJurado(Jurado jurado, Double nota) {
-        if(jurados.size() < 4){
-            jurados.put(jurado, nota);
-        } else{
-            System.out.println("Essa banca já está cheia");
-        }
+    public Projeto getProjetoAvaliado() {
+        return projetoAvaliado;
+    }
+    public void adicionarProjeto(Projeto projetoAvaliado) {
+        this.projetoAvaliado = projetoAvaliado;
     }
 
-    public void adicionarProjetoABanca(Projeto projeto){
-        this.projeto = projeto;
+    public Map<Jurado, Integer> getJurados() {
+        return jurados;
     }
 
-    public Projeto getProjeto() {
-        return projeto;
+    public void adicionarJurado(Jurado jurado) {
+        jurados.put(jurado, null);
+    }
+
+    public void lancarNota(Jurado jurado, int nota) {
+        jurados.put(jurado, nota);
     }
 
     @Override
     public double calcularNotaFinal() {
-        double notaFinal = 0;
-        for(double nota: jurados.values()){
-            notaFinal += nota;
+        int soma = 0;
+        int count = 0;
+        for (Integer nota : jurados.values()) {
+            if (nota != null) {
+                soma += nota;
+                count++;
+            }
         }
-        return notaFinal;
+        if (count > 0) {
+            return (double) soma / count;
+        } else {
+            return 0.0;
+        }
     }
 }
+

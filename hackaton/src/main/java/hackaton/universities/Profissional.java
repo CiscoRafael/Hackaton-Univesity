@@ -1,28 +1,25 @@
 package hackaton.universities;
 
-public class Profissional {
-    private String nome;
+public class Profissional extends Pessoa{
+    
+    private String cargo;
     private boolean disponivel;
-
-    public Profissional(String nome) {
-        this.nome = nome;
+    
+    public String getCargo() {
+        return cargo;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public boolean isDisponivel() {
         return disponivel;
     }
-
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
+
+    
 
     
 }
