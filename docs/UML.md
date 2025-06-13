@@ -1,40 +1,73 @@
-
-
-## 📋 Diagrama UML 1.0
+## 📘 Diagrama UML e Arquitetura do Sistema
 
 ---
 
+## 🧠 Visão Arquitetural
 
-## 🏗️ Arquitetura e Diagrama de Classes
+O **Sistema de Gerenciamento de Hackathons Universitários** foi modelado com base em princípios sólidos de **orientação a objetos**, focando em modularidade, escalabilidade e coesão entre os componentes. Toda a lógica do sistema está representada no **diagrama de classes UML** abaixo, que ilustra a estrutura de entidades, seus relacionamentos e responsabilidades.
 
-O diagrama de classes abaixo representa a arquitetura do Sistema de Gerenciamento de Hackathons. Ele foi modelado para refletir as entidades, seus relacionamentos e as principais funcionalidades do projeto, servindo como a base para toda a implementação em Java.
+<div align="center">
 
-![**DIAGRAMA UML**](assets/imagens/diagrama-uml.jpg.png)
+![Diagrama UML](assets/imagens/diagrama-uml.jpg.png)
 
-### Detalhamento da Estrutura
+</div>
 
-A arquitetura do sistema é dividida em três grupos lógicos principais:
+---
 
-#### 1. Entidades e Atores
-Este grupo define as classes base e os diferentes tipos de pessoas envolvidas no hackathon, utilizando **herança** para criar uma estrutura clara e extensível.
+## 🧱 Componentes Arquiteturais
 
-* **`Instituicao`** (Abstrata): Classe base que representa uma organização, como uma `Universidade` ou `Empresa`.
-* **`Pessoa`** (Abstrata): Generalização para um indivíduo no sistema, contendo dados comuns como nome e e-mail, e associada a uma `Instituicao`.
-* **`Estudante`**: Um participante do hackathon que compõe uma `Equipe`.
-* **`Profissional`**: Pode atuar como `Orientador` de um projeto ou como `Jurado`.
-* **`Jurado`**: Especialização de `Profissional`, responsável por avaliar os projetos em uma `Banca`.
+A estrutura do sistema está organizada em três grandes camadas lógicas:
 
-#### 2. Componentes do Hackathon
-Este grupo representa as entidades centrais que compõem o evento.
+---
 
-* **`Equipe`**: Um grupo de `Estudante`s que trabalha em um `Projeto`.
-* **`Projeto`**: O trabalho desenvolvido pela `Equipe`, que possui um `Orientador` e recebe uma `notaFinal`.
-* **`Banca`**: O comitê de `Jurado`s responsável por avaliar um `projetoAvaliado`.
-* **`Apresentacao`**: O evento de avaliação em si, que conecta um `Projeto`, uma `Banca` e um `local` (`Sala`) em uma data e hora específicas.
-* **`Sala`**: O local físico onde a apresentação ocorre.
+### 1️⃣ Entidades e Atores do Domínio
 
-#### 3. Padrões de Design e Interfaces
-Este grupo destaca as decisões de arquitetura que garantem a flexibilidade e a organização do código.
+Agrupamento de classes que representam os participantes e instituições envolvidas no hackathon.
 
-* **`Avaliavel`** (Interface): Define um contrato com o método `calcularNotaFinal()`. A classe `Banca` implementa essa interface, o que permite desacoplar a lógica de avaliação da apresentação.
-* **`Equipes`** e **`Apresentacoes`** (Singletons): São classes de coleção que seguem o padrão de projeto **`Singleton`**. Elas garantem que exista apenas uma única instância para gerenciar todos os objetos `Equipe` e `Apresentacao` no sistema, fornecendo um ponto de acesso global e controlado.
+- **`Instituicao`** *(abstrata)*: Representa uma organização de origem, como uma universidade ou empresa.
+- **`Pessoa`** *(abstrata)*: Classe base para qualquer indivíduo no sistema, com atributos comuns como `nome` e `email`, vinculada a uma `Instituicao`.
+  - **`Estudante`**: Participante vinculado a uma `Equipe`.
+  - **`Profissional`**: Pode atuar como `Orientador` ou `Jurado`.
+    - **`Jurado`**: Subclasse especializada de `Profissional`, responsável por avaliar projetos nas bancas.
+
+> 🎓 Este grupo reflete o modelo real do evento, promovendo reutilização por meio de herança e abstração.
+
+---
+
+### 2️⃣ Núcleo do Hackathon
+
+Conjunto de entidades que compõem a dinâmica funcional do evento.
+
+- **`Equipe`**: Grupo de `Estudante`s que colabora no desenvolvimento de um `Projeto`.
+- **`Projeto`**: Produto final da equipe, orientado por um `Profissional` e avaliado com uma `notaFinal`.
+- **`Banca`**: Comitê formado por múltiplos `Jurado`s, encarregado da avaliação dos projetos.
+- **`Apresentacao`**: Evento específico de avaliação, que relaciona um `Projeto`, uma `Banca`, uma `Sala` e um horário.
+- **`Sala`**: Ambiente físico onde a apresentação ocorre.
+
+> 🧩 Essas entidades modelam o ciclo completo de participação no hackathon, da inscrição à avaliação.
+
+---
+
+### 3️⃣ Padrões de Projeto e Componentes Arquiteturais
+
+Estrutura pensada para escalabilidade e flexibilidade de código.
+
+- **Interface `Avaliavel`**: Define o contrato de avaliação com o método `calcularNotaFinal()`. A `Banca` implementa essa interface, permitindo que diferentes entidades sejam avaliáveis de forma polimórfica.
+- **Singletons: `Equipes` e `Apresentacoes`**:
+  - Ambas as classes utilizam o **padrão Singleton**, garantindo uma única instância global.
+  - Funcionam como gerenciadores centrais das entidades em execução, mantendo consistência e controle do estado da aplicação.
+
+> 🛠️ Essa camada promove a **separação de responsabilidades** e reduz o acoplamento entre as partes do sistema.
+
+---
+
+## 📌 Considerações Finais
+
+- O diagrama foi utilizado como **referência principal para implementação em Java**, respeitando todos os relacionamentos de herança, composição e uso.
+- A arquitetura permite fácil **extensão futura**, como inclusão de fases do hackathon, novos tipos de participantes ou relatórios de desempenho.
+- O uso de **interfaces e singletons** contribui diretamente para a manutenibilidade e organização do código.
+
+---
+
+> 💬 Se desejar o arquivo-fonte em **PlantUML**, ou gerar uma versão SVG editável, posso criar e incluir aqui com o diagrama em código.
+
