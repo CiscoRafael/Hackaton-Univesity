@@ -8,7 +8,7 @@ O **Sistema de Gerenciamento de Hackathons Universitários** foi modelado com ba
 
 <div align="center">
 
-![Diagrama UML](assets/imagens/diagrama-uml.jpg.png)
+![Diagrama UML](assets/imagens/UML2.0.png)
 
 </div>
 
