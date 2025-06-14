@@ -2,8 +2,8 @@
 
 # 💻 Sistema de Gerenciamento de Hackathons Universitários
 
-**Simulação completa da gestão de equipes, projetos e avaliações em um hackathon universitário.**  
-Desenvolvido em Java, com foco em boas práticas de **Programação Modular** e **Orientação a Objetos**.
+**Plataforma acadêmica para gestão de equipes, projetos, bancas e apresentações em Hackathons Universitários.**
+Desenvolvido em **Java 11+**, com foco em **orientação a objetos**, **padrões de projeto** e **simulação em memória**.
 
 </div>
 
@@ -11,89 +11,112 @@ Desenvolvido em Java, com foco em boas práticas de **Programação Modular** e 
 
 ![Java](https://img.shields.io/badge/Java-11%2B-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Coverage](https://img.shields.io/codecov/c/github/[usuario]/[repositorio]?color=brightgreen)
-![Repo Size](https://img.shields.io/github/repo-size/[usuario]/[repositorio])
-![Last Commit](https://img.shields.io/github/last-commit/[usuario]/[repositorio])
-![Open Issues](https://img.shields.io/github/issues/[usuario]/[repositorio])
+![Coverage](https://img.shields.io/codecov/c/github/usuario/repositorio?color=brightgreen)
+![Repo Size](https://img.shields.io/github/repo-size/usuario/repositorio)
+![Last Commit](https://img.shields.io/github/last-commit/usuario/repositorio)
+![Open Issues](https://img.shields.io/github/issues/usuario/repositorio)
 
 </div>
 
 ---
 
+## ✪ Sumário
+
+* [👥 Equipe](#-equipe)
+* [📘 Visão Geral](#-visão-geral)
+* [🎯 Objetivos](#-objetivos)
+* [🧱 Arquitetura e Design](#-arquitetura-e-design)
+
+* [⚙️ Estrutura de Pacotes](#%EF%B8%8F-estrutura-de-pacotes)
+* [🧹 Padrões e Princípios](#-padrões-e-princ%C3%ADpios)
+* [🚀 Funcionalidades](#-funcionalidades)
+* [🧪 Requisitos](#-requisitos)
+* [🛠%ef%b8%8f Execução](#%EF%B8%8F-execu%C3%A7%C3%A3o)
+
+---
+
 ## 👥 Equipe
 
-- **Professor:** Daniel Kansaon  
-- **Alunos:**
-  - Francisco Rafael P. Rodrigues  
-  - João R. Fiuza
+* **Professor Orientador:** Daniel Kansaon
+* **Desenvolvedores:**
+
+  * Francisco Rafael P. Rodrigues
+  * João Ricardo Fiuza
 
 ---
 
-## 📘 1. Visão Geral
+## 📘 Visão Geral
 
-Este projeto simula a gestão de um **Hackathon Universitário**, desde a formação de equipes até a avaliação final dos projetos. O sistema é inteiramente executado em memória e foi desenvolvido como parte da disciplina de **Programação Modular**.
+Este projeto simula, de forma modular e didática, um **Hackathon Universitário**, desde a criação das equipes, submissão de projetos, formação da banca e avaliação das apresentações.
 
----
-
-## 🎯 2. Objetivos
-
-- Aplicar conceitos de **modularização**, **encapsulamento** e **reutilização de código**;
-- Utilizar **herança**, **interfaces** e **design patterns** para uma arquitetura coesa;
-- Praticar a **estruturação em pacotes** e a organização de responsabilidades;
-- Demonstrar o uso de **streams** e **coleções genéricas** do Java.
+* 🔄 100% em memória: sem dependências externas ou banco de dados.
+* 📊 Forte abstração via classes, herança, interfaces e polimorfismo.
+* 📚 Projeto desenvolvido para a disciplina de **Programação Modular (2º semestre)**.
 
 ---
 
-## 🧱 3. Arquitetura e Design
+## 🎯 Objetivos
 
-A aplicação segue uma arquitetura orientada a objetos, estruturada em pacotes e baseada em um diagrama de classes UML.
-
-### ⚙️ 3.1 Estrutura de Pacotes
-
-| Pacote           | Conteúdo                                                             |
-|------------------|----------------------------------------------------------------------|
-| `entidades`      | Classes de domínio: `Pessoa`, `Estudante`, `Profissional`, `Projeto`, `Equipe` |
-| `controle`       | Lógica de controle: simulação principal (`Main`)                     |
-| `avaliacao`      | Interface `Avaliavel` e classe `Banca`                               |
-| `gerenciadores`  | Singletons: `Equipes`, `Apresentacoes`                               |
-
-### 🧩 3.2 Padrões e Princípios Aplicados
-
-- **Herança:** `Estudante` e `Profissional` herdam de `Pessoa`, promovendo reutilização;
-- **Interface `Avaliavel`:** Abstrai a lógica de avaliação, promovendo flexibilidade;
-- **Singleton:** `Equipes` e `Apresentacoes` garantem acesso global e seguro às coleções.
+* Estruturar uma arquitetura **modular, coesa e reutilizável**;
+* Aplicar padrões como **Singleton** e **Strategy (via interface Avaliavel)**;
+* Trabalhar com **coleções genéricas** e **Stream API** do Java;
+* Realizar uma **simulação completa** do ciclo de um hackathon.
 
 ---
 
-## 🚀 4. Funcionalidades Implementadas
+## 🧱 Arquitetura e Design
 
-A simulação principal (`Main.java`) cobre todo o fluxo esperado para o gerenciamento de um hackathon:
+### ⚙️ Estrutura de Pacotes
 
-- 👥 **Criação de Equipes:** 2 equipes, cada uma com 5 estudantes;
-- 📁 **Submissão de Projetos:** Um projeto atribuído por equipe;
-- 🧑‍⚖️ **Formação da Banca:** Cada projeto é avaliado por 4 jurados;
-- 📊 **Avaliação e Média:** Média final calculada com base nas notas;
-- ✅ **Filtragem de Aprovados:** Uso de `Stream API` para exibir somente projetos com nota ≥ 7.0.
+| Pacote          | Responsabilidade                                                                 |
+| --------------- | -------------------------------------------------------------------------------- |
+| `entidades`     | Modelagem de domínio: `Pessoa`, `Estudante`, `Profissional`, `Equipe`, `Projeto` |
+| `controle`      | Fluxo principal da aplicação e orquestração de eventos (`Main`)                  |
+| `avaliacao`     | Avaliação de projetos: `Banca`, interface `Avaliavel`                            |
+| `gerenciadores` | Gerenciamento global com Singleton: `Equipes`, `Apresentacoes`                   |
+
+### 🧹 Padrões e Princípios
+
+* **Herança:** `Estudante` e `Profissional` extendem `Pessoa`;
+* **Interface `Avaliavel`:** abstrai a lógica de avaliação de projetos;
+* **Singleton:** garante consistência nas coleções gerenciadas pelo sistema;
+* **SRP e Baixo Acoplamento:** cada classe tem responsabilidade única.
 
 ---
 
-## 🧪 5. Pré-requisitos
+## 🚀 Funcionalidades
 
-- Java Development Kit (JDK) **11** ou superior instalado e configurado no `PATH`.
+* 👥 **Equipes**: 2 equipes com 5 estudantes cada;
+* 📂 **Projetos**: submetidos e associados às equipes;
+* 🧑‍⚖️ **Jurados**: 4 jurados por banca avaliadora;
+* 📊 **Avaliações**: notas atribuídas individualmente, com cálculo da média;
+* 📋 **Filtro Aprovados**: uso de `Streams` para exibir apenas projetos com nota ≥ 7.0.
 
 ---
 
-## 🛠️ 6. Instruções de Execução
+## 🧪 Requisitos
+
+* Java Development Kit (JDK) **11** ou superior
+* Terminal com suporte a comandos `javac` e `java`
+
+---
+
+## 🛠️ Execução
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/[usuario]/[repositorio].git
+$ git clone https://github.com/usuario/repositorio.git
 
-# 2. Acesse o diretório do projeto
-cd [repositorio]
+# 2. Acesse a pasta do projeto
+$ cd repositorio
 
-# 3. Compile os arquivos-fonte
-javac -d bin src/*.java
+# 3. Compile os arquivos
+$ javac -d bin src/**/*.java
 
-# 4. Execute a simulação
-java -cp bin Main
+# 4. Execute a aplicação
+$ java -cp bin controle.Main
+```
+
+---
+
+> © 2025 - Projeto acadêmico criado para fins didáticos. Todos os direitos reservados aos autores.
