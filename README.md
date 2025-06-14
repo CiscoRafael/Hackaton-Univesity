@@ -1,8 +1,10 @@
 <div align="center">
+  <img src="docs/assets/imagens/ChatGPT Image 14 de jun. de 2025, 15_14_53.png" alt="Diagrama UML do Sistema" width="800"/>
+</div>
 
-# 💻 Sistema de Gerenciamento de Hackathons Universitários
+<div align="center">
 
-**Plataforma acadêmica para gestão de equipes, projetos, bancas e apresentações em Hackathons Universitários.**
+# **Plataforma acadêmica para gestão de equipes, projetos, bancas e apresentações em Hackathons Universitários.**
 Desenvolvido em **Java 11+**, com foco em **orientação a objetos**, **padrões de projeto** e **simulação em memória**.
 
 </div>
