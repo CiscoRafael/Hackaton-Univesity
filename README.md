@@ -33,7 +33,7 @@ Desenvolvido em **Java 11+**, com foco em **orientação a objetos**, **padrões
 * [🧹 Padrões e Princípios](#-padrões-e-princ%C3%ADpios)
 * [🚀 Funcionalidades](#-funcionalidades)
 * [🧪 Requisitos](#-requisitos)
-* [🛠%ef%b8%8f Execução](#%EF%B8%8F-execu%C3%A7%C3%A3o)
+* [🛠 Execução](#%EF%B8%8F-execu%C3%A7%C3%A3o)
 
 ---
 
