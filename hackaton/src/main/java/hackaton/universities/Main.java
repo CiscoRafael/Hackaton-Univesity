@@ -77,8 +77,7 @@ public class Main {
         List<Apresentacao> aprovados = apresentacoes.buscarTodasApresentacoes().stream().filter(a -> a.getProjeto().getNotaFinal() >= 7).collect(Collectors.toList());
 
         for (Apresentacao ap : aprovados) {
-            System.out.printf("Projeto: %s | Equipe: %s | Nota Final: %.2f\n",
-                ap.getProjeto().getTitulo(), ap.getProjeto().getEquipe().getNome(), ap.getProjeto().getNotaFinal());
+            System.out.printf("Projeto: %s | Equipe: %s | Nota Final: %.2f\n",ap.getProjeto().getTitulo(), ap.getProjeto().getEquipe().getNome(), ap.getProjeto().getNotaFinal());
         }
     }
 
