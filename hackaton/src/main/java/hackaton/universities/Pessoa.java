@@ -1,14 +1,14 @@
 package hackaton.universities;
 
 abstract class  Pessoa {
+    private String nome, email;
+    private Instituicao instituicao;
+
     public Pessoa(String nome, String email, Instituicao instituicao) {
         this.nome = nome;
         this.email = email;
-        Instituicao = instituicao;
+        this.instituicao = instituicao;
     }
-
-    private String nome, email;
-    private Instituicao Instituicao;
 
     public String getNome() {
         return nome;
@@ -23,10 +23,9 @@ abstract class  Pessoa {
         this.email = email;
     }
     public Instituicao getInstituicao() {
-        return Instituicao;
+        return instituicao;
     }
     public void setInstituicao(Instituicao instituicao) {
-        Instituicao = instituicao;
+        this.instituicao = instituicao;
     }    
-    
 }

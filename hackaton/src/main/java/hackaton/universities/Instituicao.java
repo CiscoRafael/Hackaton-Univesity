@@ -23,6 +23,4 @@ abstract class Instituicao {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-
-    
 }

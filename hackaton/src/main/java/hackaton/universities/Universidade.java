@@ -31,6 +31,4 @@ public class Universidade extends Instituicao{
     public void setNotaInstitucional(double notaInstitucional) {
         this.notaInstitucional = notaInstitucional;
     }
-
-    
 }

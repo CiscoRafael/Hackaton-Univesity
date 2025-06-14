@@ -16,6 +16,4 @@ public class Jurado extends Profissional{
     public void setAreaEspecializacao(String areaEspecializacao) {
         this.areaEspecializacao = areaEspecializacao;
     }
-
-    
 }

@@ -3,7 +3,7 @@ package hackaton.universities;
 public class Estudante {
     private String nome, matricula;
 
-    Estudante(String nome, String matricula){
+    public Estudante(String nome, String matricula){
         this.nome = nome;
         this.matricula = matricula;
     }
@@ -21,6 +21,4 @@ public class Estudante {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
-    
 }

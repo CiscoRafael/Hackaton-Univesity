@@ -16,8 +16,4 @@ public class Sala {
     public int getNumero() {
         return numero;
     }
-
-    
-    
-    
 }

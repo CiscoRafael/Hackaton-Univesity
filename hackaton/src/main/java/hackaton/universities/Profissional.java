@@ -24,8 +24,4 @@ public class Profissional extends Pessoa{
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
-
-    
-
-    
 }

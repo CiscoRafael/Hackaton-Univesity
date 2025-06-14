@@ -1,7 +1,6 @@
 package hackaton.universities;
 
 import java.time.LocalDateTime;
-import java.util.Scanner;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +9,6 @@ public class Main {
         Equipes equipes = Equipes.getInstancia();
         Apresentacoes apresentacoes = Apresentacoes.getInstancia();
         Projeto projeto1, projeto2;
-        Scanner input = new Scanner(System.in);
 
         // Criar 2 equipes com 5 estudantes cada (dados fixos)
         Equipe equipe1 = new Equipe("Equipe Alpha");
@@ -86,13 +84,11 @@ public class Main {
 
         // Mostrar projetos com nota final >= 7
         System.out.println("\nProjetos com nota final >= 7:");
-        List<Apresentacao> aprovados = apresentacoes.buscarTodasApresentacaos().stream().filter(a -> a.getProjeto().getNotaFinal() >= 7).collect(Collectors.toList());
+        List<Apresentacao> aprovados = apresentacoes.buscarTodasApresentacoes().stream().filter(a -> a.getProjeto().getNotaFinal() >= 7).collect(Collectors.toList());
 
         for (Apresentacao ap : aprovados) {
             System.out.printf("Projeto: %s | Equipe: %s | Nota Final: %.2f\n",
                 ap.getProjeto().getTitulo(), ap.getProjeto().getEquipe().getNome(), ap.getProjeto().getNotaFinal());
         }
-
-        input.close();
     }
 }

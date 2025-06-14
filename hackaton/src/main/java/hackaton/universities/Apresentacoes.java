@@ -21,7 +21,7 @@ public class Apresentacoes {
         apresentacoes.add(apresentacao);
     }
 
-    public ArrayList<Apresentacao> buscarTodasApresentacaos() {
+    public ArrayList<Apresentacao> buscarTodasApresentacoes() {
         return apresentacoes;
     }
 }
