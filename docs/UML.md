@@ -1,70 +1,157 @@
-## 📘 Diagrama UML e Arquitetura do Sistema
+# 🎓 Sistema Hackaton-Univesity
+[![Java](https://img.shields.io/badge/linguagem-Java-orange.svg)](https://www.oracle.com/java/)
+[![Build](https://img.shields.io/badge/build-sucesso-brightgreen.svg)]()
+[![Versão](https://img.shields.io/badge/versão-1.0.0-blue.svg)]()
+[![Licença](https://img.shields.io/badge/licença-MIT-lightgrey.svg)]()
 
 ---
 
-## 🧠 Visão Arquitetural
+## 📚 Sumário
 
-O **Sistema de Gerenciamento de Hackathons Universitários** foi modelado com base em princípios sólidos de **orientação a objetos**, focando em modularidade, escalabilidade e coesão entre os componentes. Toda a lógica do sistema está representada no **diagrama de classes UML** abaixo, que ilustra a estrutura de entidades, seus relacionamentos e responsabilidades.
+- [🧠 Visão Geral](#-visão-geral)
+- [🧱 Estrutura Arquitetural](#-estrutura-arquitetural)
+  - [1️⃣ Entidades de Domínio](#1️⃣-entidades-de-domínio)
+  - [2️⃣ Funcionalidades Centrais](#2️⃣-funcionalidades-centrais)
+  - [3️⃣ Padrões de Projeto](#3️⃣-padrões-de-projeto)
+- [✅ Considerações Finais](#-considerações-finais)
+- [👥 Equipe de Desenvolvimento](#-equipe-de-desenvolvimento)
+
+---
+
+## 🧠 Visão Geral
+
+O **Sistema de Gerenciamento de Apresentações Acadêmicas** foi projetado com base em princípios fundamentais da **Programação Orientada a Objetos (POO)**. A arquitetura prioriza:
+
+- 🔄 Reutilização de código
+- 🧩 Baixo acoplamento
+- 🧱 Alta coesão
+- 🚀 Manutenibilidade e escalabilidade
+
+Abaixo está o diagrama UML que representa a estrutura lógica do sistema, modelando entidades, relacionamentos e responsabilidades.
 
 <div align="center">
-
-![Diagrama UML](assets/imagens/UML2.0.png)
-
+  <img src="assets/imagens/UML2.0.png" alt="Diagrama UML do Sistema" width="800"/>
 </div>
 
 ---
 
-## 🧱 Componentes Arquiteturais
+## 🧱 Estrutura Arquitetural
 
-A estrutura do sistema está organizada em três grandes camadas lógicas:
-
----
-
-### 1️⃣ Entidades e Atores do Domínio
-
-Agrupamento de classes que representam os participantes e instituições envolvidas no hackathon.
-
-- **`Instituicao`** *(abstrata)*: Representa uma organização de origem, como uma universidade ou empresa.
-- **`Pessoa`** *(abstrata)*: Classe base para qualquer indivíduo no sistema, com atributos comuns como `nome` e `email`, vinculada a uma `Instituicao`.
-  - **`Estudante`**: Participante vinculado a uma `Equipe`.
-  - **`Profissional`**: Pode atuar como `Orientador` ou `Jurado`.
-    - **`Jurado`**: Subclasse especializada de `Profissional`, responsável por avaliar projetos nas bancas.
-
-> 🎓 Este grupo reflete o modelo real do evento, promovendo reutilização por meio de herança e abstração.
+O sistema está organizado em três grandes camadas funcionais:
 
 ---
 
-### 2️⃣ Núcleo do Hackathon
+### 1️⃣ Entidades de Domínio
 
-Conjunto de entidades que compõem a dinâmica funcional do evento.
+Modelam os participantes envolvidos no processo de avaliação acadêmica.
 
-- **`Equipe`**: Grupo de `Estudante`s que colabora no desenvolvimento de um `Projeto`.
-- **`Projeto`**: Produto final da equipe, orientado por um `Profissional` e avaliado com uma `notaFinal`.
-- **`Banca`**: Comitê formado por múltiplos `Jurado`s, encarregado da avaliação dos projetos.
-- **`Apresentacao`**: Evento específico de avaliação, que relaciona um `Projeto`, uma `Banca`, uma `Sala` e um horário.
-- **`Sala`**: Ambiente físico onde a apresentação ocorre.
+#### 🏛 Instituição
 
-> 🧩 Essas entidades modelam o ciclo completo de participação no hackathon, da inscrição à avaliação.
+- **`Instituicao`** *(abstrata)*  
+  Representa uma entidade acadêmica (ex: universidade).  
+  Atributos: `nome`, `cnpj`
+
+#### 👤 Pessoas
+
+- **`Pessoa`** *(abstrata)*  
+  Classe base para todos os indivíduos do sistema.  
+  Atributos: `nome`, `email`, `instituicao`
+
+- **`Estudante`**  
+  - Participa de uma equipe  
+  - Atributo adicional: `matricula`
+
+- **`Profissional`**  
+  - Atua como orientador ou jurado  
+  - Atributos: `cargo`, `disponibilidade`
+
+- **`Jurado`** *(especialização de Profissional)*  
+  - Atributo: `areaEspecializacao`
+
+> ✅ A estrutura usa **herança** para evitar duplicidade e refletir o domínio acadêmico com precisão.
+
+---
+
+### 2️⃣ Funcionalidades Centrais
+
+Define os principais processos do sistema: projetos, equipes, avaliações e apresentações.
+
+#### 👥 Equipe
+
+- Grupo de estudantes
+- Associada a um projeto
+
+#### 📁 Projeto
+
+- Desenvolvido por uma equipe
+- Orientado por um profissional
+- Possui nota final
+
+#### 🧑‍⚖️ Banca
+
+- Composta por um ou mais jurados
+- Responsável por avaliar os projetos
+- Implementa `calcularNotaFinal()`
+
+#### 📅 Apresentação
+
+- Evento formal de avaliação
+- Relaciona um `Projeto`, `Banca`, `Sala` e `dataHora`
+
+#### 🏫 Sala
+
+- Local físico da apresentação
+- Atributos: `predio`, `numero`
+
+> 🔄 Esses componentes modelam o ciclo acadêmico completo, da formação da equipe até a entrega e avaliação do projeto.
 
 ---
 
-### 3️⃣ Padrões de Projeto e Componentes Arquiteturais
+### 3️⃣ Padrões de Projeto
 
-Estrutura pensada para escalabilidade e flexibilidade de código.
+Uso de boas práticas de engenharia de software.
 
-- **Interface `Avaliavel`**: Define o contrato de avaliação com o método `calcularNotaFinal()`. A `Banca` implementa essa interface, permitindo que diferentes entidades sejam avaliáveis de forma polimórfica.
-- **Singletons: `Equipes` e `Apresentacoes`**:
-  - Ambas as classes utilizam o **padrão Singleton**, garantindo uma única instância global.
-  - Funcionam como gerenciadores centrais das entidades em execução, mantendo consistência e controle do estado da aplicação.
+#### ✅ Interface `Avaliavel`
 
-> 🛠️ Essa camada promove a **separação de responsabilidades** e reduz o acoplamento entre as partes do sistema.
+- Define o contrato de avaliação via `calcularNotaFinal()`
+- Implementada por `Banca` para possibilitar polimorfismo
+
+#### 🔁 Padrões Singleton
+
+- **`Equipes`**  
+  Gerencia todas as equipes  
+  Garante uma única instância global
+
+- **`Apresentacoes`**  
+  Controlador centralizado de todas as apresentações  
+  Também utiliza o padrão Singleton
+
+> 🧠 Esses padrões asseguram **controle global e acesso padronizado** aos dados dinâmicos.
 
 ---
 
-## 📌 Considerações Finais
+## ✅ Considerações Finais
 
-- O diagrama foi utilizado como **referência principal para implementação em Java**, respeitando todos os relacionamentos de herança, composição e uso.
-- A arquitetura permite fácil **extensão futura**, como inclusão de fases do hackathon, novos tipos de participantes ou relatórios de desempenho.
-- O uso de **interfaces e singletons** contribui diretamente para a manutenibilidade e organização do código.
+- O diagrama UML foi a **referência principal para a implementação em Java**, respeitando os princípios de modelagem.
+- A arquitetura permite:
+  - 🔧 Manutenção facilitada
+  - 📈 Evolução escalável
+  - 🤝 Colaboração entre desenvolvedores com coesão
+- Possíveis expansões:
+  - Fases intermediárias do evento
+  - Novos tipos de participantes
+  - Geração de relatórios analíticos
 
 ---
+
+## 👥 Equipe de Desenvolvimento
+
+- João Ricardo Fiuza –  Modelador UML  
+- Francisco Rafael Pereira Rodrigues – Desenvolvedor  
+ 
+
+**Professor orientador:** Prof. Daniel Pimentel Kansaon
+
+---
+
+© 2025 - Desenvolvido para fins acadêmicos.
