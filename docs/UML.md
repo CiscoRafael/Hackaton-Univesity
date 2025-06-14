@@ -68,6 +68,3 @@ Estrutura pensada para escalabilidade e flexibilidade de código.
 - O uso de **interfaces e singletons** contribui diretamente para a manutenibilidade e organização do código.
 
 ---
-
-> 💬 Se desejar o arquivo-fonte em **PlantUML**, ou gerar uma versão SVG editável, posso criar e incluir aqui com o diagrama em código.
-
