@@ -10,20 +10,9 @@ public class Main {
         Apresentacoes apresentacoes = Apresentacoes.getInstancia();
         Projeto projeto1, projeto2;
 
-        // Criar 2 equipes com 5 estudantes cada (dados fixos)
-        Equipe equipe1 = new Equipe("Equipe Alpha");
-        equipe1.adicionarEstudante(new Estudante("Alice", "A001"));
-        equipe1.adicionarEstudante(new Estudante("Bruno", "A002"));
-        equipe1.adicionarEstudante(new Estudante("Carla", "A003"));
-        equipe1.adicionarEstudante(new Estudante("Daniel", "A004"));
-        equipe1.adicionarEstudante(new Estudante("Eduarda", "A005"));
-
-        Equipe equipe2 = new Equipe("Equipe Beta");
-        equipe2.adicionarEstudante(new Estudante("Felipe", "B001"));
-        equipe2.adicionarEstudante(new Estudante("Gabriela", "B002"));
-        equipe2.adicionarEstudante(new Estudante("Henrique", "B003"));
-        equipe2.adicionarEstudante(new Estudante("Isabela", "B004"));
-        equipe2.adicionarEstudante(new Estudante("João", "B005"));
+        // Criando 2 equipes com 5 estudantes cada (dados fixos)
+        Equipe equipe1 = criarEquipeAlpha();
+        Equipe equipe2 = criarEquipeBeta();
 
         equipes.adicionarEquipe(equipe1);
         equipes.adicionarEquipe(equipe2);
@@ -32,6 +21,7 @@ public class Main {
         projeto1 = new Projeto("Salvando baleias", "Projeto sobre preservação de baleias");
         projeto2 = new Projeto("Vida de inseto", "Ecossistemas de insetos");
 
+        //Adicionando projetos as equipes
         projeto1.adicionarEquipeAoProjeto(equipes.buscarEquipes().get(0));
         projeto2.adicionarEquipeAoProjeto(equipes.buscarEquipes().get(1));
 
@@ -91,4 +81,26 @@ public class Main {
                 ap.getProjeto().getTitulo(), ap.getProjeto().getEquipe().getNome(), ap.getProjeto().getNotaFinal());
         }
     }
+
+    //Métodos para criar as 2 equipes
+    private static Equipe criarEquipeAlpha() {
+        Equipe equipe = new Equipe("Equipe Alpha");
+        equipe.adicionarEstudante(new Estudante("Alice", "A001"));
+        equipe.adicionarEstudante(new Estudante("Bruno", "A002"));
+        equipe.adicionarEstudante(new Estudante("Carla", "A003"));
+        equipe.adicionarEstudante(new Estudante("Daniel", "A004"));
+        equipe.adicionarEstudante(new Estudante("Eduarda", "A005"));
+        return equipe;
+    }
+
+    private static Equipe criarEquipeBeta() {
+        Equipe equipe = new Equipe("Equipe Beta");
+        equipe.adicionarEstudante(new Estudante("Felipe", "B001"));
+        equipe.adicionarEstudante(new Estudante("Gabriela", "B002"));
+        equipe.adicionarEstudante(new Estudante("Henrique", "B003"));
+        equipe.adicionarEstudante(new Estudante("Isabela", "B004"));
+        equipe.adicionarEstudante(new Estudante("João", "B005"));
+        return equipe;
+    }
+
 }
