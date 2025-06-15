@@ -6,24 +6,22 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Equipes equipes = Equipes.getInstancia();
-        Apresentacoes apresentacoes = Apresentacoes.getInstancia();
         Projeto projeto1, projeto2;
 
         // Criando 2 equipes com 5 estudantes cada (dados fixos)
         Equipe equipe1 = criarEquipeAlpha();
         Equipe equipe2 = criarEquipeBeta();
 
-        equipes.adicionarEquipe(equipe1);
-        equipes.adicionarEquipe(equipe2);
+        Equipes.getInstancia().adicionarEquipe(equipe1);
+        Equipes.getInstancia().adicionarEquipe(equipe2);
 
         // Criar projetos
         projeto1 = new Projeto("Salvando baleias", "Projeto sobre preservação de baleias");
         projeto2 = new Projeto("Vida de inseto", "Ecossistemas de insetos");
 
         //Adicionando projetos as equipes
-        projeto1.adicionarEquipeAoProjeto(equipes.buscarEquipes().get(0));
-        projeto2.adicionarEquipeAoProjeto(equipes.buscarEquipes().get(1));
+        projeto1.adicionarEquipeAoProjeto(Equipes.getInstancia().buscarEquipes().get(0));
+        projeto2.adicionarEquipeAoProjeto(Equipes.getInstancia().buscarEquipes().get(1));
 
         // Criar Universidade
         Universidade uni = new Universidade("PUC", "17.178.195/0014-81", "PUC Minas", true, 5);
@@ -67,14 +65,14 @@ public class Main {
         Apresentacao apresentacao2 = new Apresentacao(projeto2, banca2, new Sala("Humanas", 6), LocalDateTime.now());
 
         apresentacao1.avaliar();
-        apresentacoes.adicionarApresentacao(apresentacao1);
+        Apresentacoes.getInstancia().adicionarApresentacao(apresentacao1);
 
         apresentacao2.avaliar();
-        apresentacoes.adicionarApresentacao(apresentacao2);
+        Apresentacoes.getInstancia().adicionarApresentacao(apresentacao2);
 
         // Mostrar projetos com nota final >= 7
         System.out.println("\nProjetos com nota final >= 7:");
-        List<Apresentacao> aprovados = apresentacoes.buscarTodasApresentacoes().stream().filter(a -> a.getProjeto().getNotaFinal() >= 7).collect(Collectors.toList());
+        List<Apresentacao> aprovados = Apresentacoes.getInstancia().buscarTodasApresentacoes().stream().filter(a -> a.getProjeto().getNotaFinal() >= 7).collect(Collectors.toList());
 
         for (Apresentacao ap : aprovados) {
             System.out.printf("Projeto: %s | Equipe: %s | Nota Final: %.2f\n",ap.getProjeto().getTitulo(), ap.getProjeto().getEquipe().getNome(), ap.getProjeto().getNotaFinal());
